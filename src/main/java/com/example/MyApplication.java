@@ -7,15 +7,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-public class SpringBootHibernateApplication {
+public class MyApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootHibernateApplication.class, args);
+		SpringApplication.run(MyApplication.class, args);
 	}
 	
 	@RequestMapping("/")
 	public String index() {
-		return "This Spring Boot project will show you how to connect database with Hibernate!";
+		return "This Spring Boot project will show you how to connect database with MyBatis and Hibernate!";
 	}
 
 }
