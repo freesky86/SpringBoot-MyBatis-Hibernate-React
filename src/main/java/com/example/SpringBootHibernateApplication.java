@@ -6,16 +6,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-//@RestController
-public class SpringBootMyBatisApplication {
+@RestController
+public class SpringBootHibernateApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootMyBatisApplication.class, args);
+		SpringApplication.run(SpringBootHibernateApplication.class, args);
 	}
 	
-//	@RequestMapping("/")
-//	public String index() {
-//		return "This Spring Boot project will show you how to connect database with MyBatis!";
-//	}
+	@RequestMapping("/")
+	public String index() {
+		return "This Spring Boot project will show you how to connect database with Hibernate!";
+	}
 
 }
