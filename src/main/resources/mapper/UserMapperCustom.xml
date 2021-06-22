@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.mapper.UserMapperCustom">
 	<select id="queryUserById" resultType="com.example.domain.User" parameterType="java.lang.Long">
-		select id, first_name, last_name, email from User
+		select id, first_name as firstName, last_name as lastName, email from User
 		where 
 	    	id = #{id,jdbcType=INTEGER}
 	</select>
