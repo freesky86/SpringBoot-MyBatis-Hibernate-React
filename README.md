@@ -15,5 +15,9 @@ To solve this issue, we can add below item in application.properties.
     Or
     mybatis.configuration.map-underscore-to-camel-case=true
 
+The example URL
+
+	http://localhost:8080/hibernate/users
+	http://localhost:8080/mybatis/users
 
 Email: freesky_zh@hotmail.com
