@@ -11,11 +11,13 @@ import com.example.domain.User;
 @Mapper
 public interface UserMapper {
 
-//	@Select("select * from demo.user")
-	@Select("select * from user")
+//	@Select("select * from demo.user")   // MySQL
+//	@Select("select * from user")        // H2
+	@Select("select * from user_table")   // SQL Server
 	List<User> findAll();
 	
-//	@Select("SELECT * FROM demo.user WHERE id = #{id}")
-	@Select("SELECT * FROM user WHERE id = #{id}")
+//	@Select("SELECT * FROM demo.user WHERE id = #{id}")    // MySQL
+//	@Select("SELECT * FROM user WHERE id = #{id}")         // H2
+	@Select("SELECT * FROM user_table WHERE id = #{id}")         // SQL Server
 	User findUser(@Param("id") Long id);
 }
