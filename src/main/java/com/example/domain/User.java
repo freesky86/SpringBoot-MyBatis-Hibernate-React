@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "UserTable")   // SQL Server
+//@Table(name = "UserTable")   // SQL Server
 public class User {
 	@Id
     @GeneratedValue
