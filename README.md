@@ -1,5 +1,5 @@
 # SpringBoot-MyBatis
-Spring Boot with MyBatis and Hibernate
+Spring Boot with MyBatis and Hibernate and also React demo.
 
 This project show you how to use MyBatis and Hibernate to connect to H2, MySQL and SQL Server database.
 
