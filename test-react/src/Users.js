@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import AppNavbar from './AppNavbar';
 
-class Users extends React.Component {
+class Users extends Component {
     state = {
       isLoading: true,
       users: []
