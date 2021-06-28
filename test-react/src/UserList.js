@@ -8,12 +8,26 @@ class UserList extends Component {
     constructor(props) {
         super(props);
         this.state = {users: []};
+        this.remove = this.remove.bind(this);
     }
 
     componentDidMount() {
         fetch('/hibernate/users')
             .then(response => response.json())
             .then(data => this.setState({users: data}));
+    }
+
+    async remove(id) {
+        await fetch(`/hibernate/user/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        }).then(() => {
+            let updatedUsers = [...this.state.users].filter(i => i.id !== id);
+            this.setState({users: updatedUsers});
+        });
     }
     
     render() {
@@ -26,7 +40,7 @@ class UserList extends Component {
                 <td>{user.email}</td>
                 <td>
                     <ButtonGroup>
-                        <Button size="sm" color="primary" tag={Link} to={"/users/" + user.id}>Edit</Button>
+                        <Button size="sm" color="primary" tag={Link} to={"/user/" + user.id}>Edit</Button>
                         <Button size="sm" color="danger" onClick={() => this.remove(user.id)}>Delete</Button>
                     </ButtonGroup>
                 </td>
@@ -38,7 +52,7 @@ class UserList extends Component {
                 <AppNavbar/>
                 <Container fluid>
                     <div className="float-right">
-                        <Button color="success" tag={Link} to="/users/new">Add user</Button>
+                        <Button color="success" tag={Link} to="/user/new">Add user</Button>
                     </div>
                     <h3>User List</h3>
                     <Table className="mt-4">
