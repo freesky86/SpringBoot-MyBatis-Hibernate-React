@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import AppNavbar from './AppNavbar';
 
 class Users extends React.Component {
     state = {
@@ -23,13 +24,14 @@ class Users extends React.Component {
   
       return (
         <div className="App">
+          <AppNavbar/>
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <div className="App-intro">
               <h2>User List</h2>
               {users.map(user =>
                 <div key={user.id}>
-                  {user.firstName} - {user.lastName}
+                  {user.firstName} - {user.lastName} - {user.email}
                 </div>
               )}
             </div>
