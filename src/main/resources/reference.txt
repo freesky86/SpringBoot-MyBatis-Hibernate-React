@@ -1,6 +1,12 @@
 
-
 https://www.baeldung.com/spring-boot-react-crud
-
 https://github.com/eugenp/tutorials/tree/master/spring-boot-modules/spring-boot-react/frontend
 
+
+https://create-react-app.dev/docs/documentation-intro
+
+>>npm run build
+>>npm install -g serve
+>>serve -s build
+or
+>>serve -s build -l 3800
